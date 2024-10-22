@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2951670306103137523}
   - component: {fileID: 3104563834663463014}
   m_Layer: 0
-  m_Name: Model
+  m_Name: magickHat_Model
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -135,3 +135,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   P_Stats: {fileID: 0}
   ItemDescription: 
+  pos: {x: 0, y: 0, z: 0}
+  rotation: {x: 0, y: 0, z: 0}
+  scale: {x: 0, y: 0, z: 0}

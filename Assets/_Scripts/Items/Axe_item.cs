@@ -5,28 +5,22 @@ using UnityEngine;
 
 public class Axe_item : ItemBehavior
 {   
-    [Header("Axe gives %damage to the baseStats of the player")]
-    public GameObject Item_axe;
-    public Vector3 PlaceOnModel;
+    [Header("ScriptStats")]
     public float damageProcentBuff = 25;
     public float ActualValue;
 
     void Start()
     {
-        FindPlayerStats();
-        ActualValue = damageProcentBuff*0.01f;
-    }
-    public void PickUp()
-    {
-        InstatiateOnModel(Item_axe,PlaceOnModel);
+        FindObjectNeeded();
+        ActualValue = (damageProcentBuff*0.01f) + 1;
     }
     public override void ChangeStats(PlayerStats playerStats)
     {
-        playerStats.attackDamage += ActualValue;
+        playerStats.attackDamage *= ActualValue;
     }
 
     public override void WriteDescreption()
     {
-
+        Debug.Log("Axe gives " + damageProcentBuff + "% damage to the baseStats of the player");
     }
 }

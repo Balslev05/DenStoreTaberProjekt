@@ -4,7 +4,7 @@ public class PlayerStats : MonoBehaviour
 {
     [Header("Stats")]
     public int maxHealth = 100;
-    private int currentHealth;
+    public int currentHealth;
     public float attackSpeed = 3;
     public float attackDamage = 10;
     public float critChance = 10;
@@ -13,7 +13,7 @@ public class PlayerStats : MonoBehaviour
     
     void Start()
     {
-        
+        currentHealth = maxHealth;
     }
 
     // Update is called once per frame
