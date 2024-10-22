@@ -5,12 +5,16 @@ public abstract class ItemBehavior : MonoBehaviour
     [Header("Inheritance Stats")]
     public PlayerStats P_Stats;
     public string ItemDescription;
-    public PlayerStats FindPlayerStats()
+
+    public virtual void FindPlayerStats()
     {
-        Debug.Log("Find Player Stats" + this.gameObject.name + "-" + P_Stats);
-        return GameObject.Find("Player").GetComponent<PlayerStats>();
+        P_Stats = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerStats>();
     }
-    public abstract void InstatiateOnModel(Vector3 pos);
+    public virtual void InstatiateOnModel(GameObject item,Vector3 pos)
+    {
+        GameObject i = Instantiate(item, P_Stats.gameObject.transform);
+        i.transform.localPosition = pos;
+    }
     public abstract void ChangeStats(PlayerStats playerStats);
     public abstract void WriteDescreption();
 }

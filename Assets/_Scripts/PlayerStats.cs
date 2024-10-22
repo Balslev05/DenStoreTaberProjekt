@@ -4,12 +4,13 @@ public class PlayerStats : MonoBehaviour
 {
     [Header("Stats")]
     public int maxHealth = 100;
-    public int currentHealth;
-    public int AttackSpeed;
-    public int AttackDamage;
-    public int critChance;
-    public int critDamage;
-    public int blockChance;
+    private int currentHealth;
+    public float attackSpeed = 3;
+    public float attackDamage = 10;
+    public float critChance = 10;
+    public float critDamage = 2;
+    public float blockChance = 0;
+    
     void Start()
     {
         
