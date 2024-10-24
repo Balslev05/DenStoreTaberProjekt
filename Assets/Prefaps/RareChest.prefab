@@ -129,6 +129,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1692765355720910629}
+  - component: {fileID: 7903015022366414185}
   m_Layer: 0
   m_Name: RareChest
   m_TagString: Untagged
@@ -152,6 +153,24 @@ Transform:
   - {fileID: 5302352866131007438}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7903015022366414185
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3971741233370202652}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8c9bba66d931d44f995194b9bf6f6c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BasePrise: 0
+  CommenChange: 0
+  RareChange: 0
+  LegendaryChange: 0
+  TopChest: {fileID: 1646169113243784689}
+  rotation: {x: -90, y: 0, z: 0}
 --- !u!1 &4412836788401319150
 GameObject:
   m_ObjectHideFlags: 0

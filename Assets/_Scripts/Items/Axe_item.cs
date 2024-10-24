@@ -18,9 +18,4 @@ public class Axe_item : ItemBehavior
     {
         playerStats.attackDamage *= ActualValue;
     }
-
-    public override void WriteDescreption()
-    {
-        Debug.Log("Axe gives " + damageProcentBuff + "% damage to the baseStats of the player");
-    }
 }

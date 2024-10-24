@@ -13,9 +13,4 @@ public class Hat_Item : ItemBehavior
         playerStats.maxHealth += HPBoost;
         playerStats.currentHealth += HPBoost;
     }
-
-    public override void WriteDescreption()
-    {
-       // Debug.Log("Hat gives " + HPBoost + " ExtrA hp to The player");
-    }
 }

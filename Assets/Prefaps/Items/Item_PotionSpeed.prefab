@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &1841548280229449266
+--- !u!1 &3749043372737879772
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,46 +8,46 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 8537862199171957756}
-  - component: {fileID: 2951670306103137523}
-  - component: {fileID: 3104563834663463014}
+  - component: {fileID: 805767829347456381}
+  - component: {fileID: 6413283588099133107}
+  - component: {fileID: 4495029034688068891}
   m_Layer: 0
-  m_Name: magickHat_Model
+  m_Name: potionSpeed_model
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &8537862199171957756
+--- !u!4 &805767829347456381
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1841548280229449266}
+  m_GameObject: {fileID: 3749043372737879772}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 6505868925507997740}
+  m_Father: {fileID: 2488680485953099839}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &2951670306103137523
+--- !u!33 &6413283588099133107
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1841548280229449266}
-  m_Mesh: {fileID: -2432090755550338912, guid: 958e0c04ae7e40e4aa9c222a6075d174, type: 3}
---- !u!23 &3104563834663463014
+  m_GameObject: {fileID: 3749043372737879772}
+  m_Mesh: {fileID: -8942847450103830328, guid: c2dbadef39e08f645816f69c4c2391d6, type: 3}
+--- !u!23 &4495029034688068891
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1841548280229449266}
+  m_GameObject: {fileID: 3749043372737879772}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -64,9 +64,9 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -921838784202127032, guid: 958e0c04ae7e40e4aa9c222a6075d174, type: 3}
-  - {fileID: 7575915981058242857, guid: 958e0c04ae7e40e4aa9c222a6075d174, type: 3}
-  - {fileID: -4973734387028869240, guid: 958e0c04ae7e40e4aa9c222a6075d174, type: 3}
+  - {fileID: 8556262120643298411, guid: c2dbadef39e08f645816f69c4c2391d6, type: 3}
+  - {fileID: -2867747967464863736, guid: c2dbadef39e08f645816f69c4c2391d6, type: 3}
+  - {fileID: -2505642851634945670, guid: c2dbadef39e08f645816f69c4c2391d6, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -88,7 +88,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!1 &7624738642980881897
+--- !u!1 &8618816788073145574
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -96,61 +96,63 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 6505868925507997740}
-  - component: {fileID: -5596058955815358138}
-  - component: {fileID: 966663974211135961}
+  - component: {fileID: 2488680485953099839}
+  - component: {fileID: 8261247745913086312}
+  - component: {fileID: 9101580108404530868}
   m_Layer: 0
-  m_Name: Item_MagicHat
+  m_Name: Item_PotionSpeed
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &6505868925507997740
+--- !u!4 &2488680485953099839
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7624738642980881897}
+  m_GameObject: {fileID: 8618816788073145574}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 8537862199171957756}
+  - {fileID: 805767829347456381}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &-5596058955815358138
+--- !u!114 &8261247745913086312
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7624738642980881897}
+  m_GameObject: {fileID: 8618816788073145574}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cfb6684e18c7cbf478a2d71d884e1d64, type: 3}
+  m_Script: {fileID: 11500000, guid: 259d1bc6e28af0a44b351a9265afe48a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rareity: 2
   P_Stats: {fileID: 0}
   Item_model: {fileID: 0}
-  pos: {x: 0, y: 1.5, z: -0.1}
-  rotation: {x: -20, y: 0, z: 0}
-  scale: {x: 0.3, y: 0.3, z: 0.3}
-  TwoDSprite: {fileID: 21300000, guid: ded4bb1432b2fed4f9d2d1aa1e821d8a, type: 3}
-  ItemName: Hat
-  ItemDescription: Comming Soon
-  HPBoost: 25
---- !u!65 &966663974211135961
+  pos: {x: 0.27, y: 0.13, z: -0.3}
+  rotation: {x: -0.00000042688683, y: 49.999996, z: 16}
+  scale: {x: 0.15, y: 0.15, z: 0.15}
+  TwoDSprite: {fileID: 21300000, guid: ff9ede84747bd8840824ffc29292a183, type: 3}
+  ItemName: MoveSpeedPotion
+  ItemDescription: This gives you extra movementspeed
+  lifeRegen: 0
+  moveSpeed: 3
+  attackSpeed: 0
+  blockChange: 0
+--- !u!65 &9101580108404530868
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7624738642980881897}
+  m_GameObject: {fileID: 8618816788073145574}
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -164,4 +166,4 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 1.7, z: 0}
+  m_Center: {x: 0, y: 0.5, z: 0}
