@@ -1,5 +1,7 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class Waves : MonoBehaviour
 {
@@ -11,6 +13,7 @@ public class Waves : MonoBehaviour
     public int enemy3Unlock = 6;*/
     
     [SerializeField] private List<GameObject> _spawnPoints = new List<GameObject>();
+    [SerializeField] public  List<GameObject> _enemies = new List<GameObject>();
 
     public GameObject enemy1;
 
@@ -22,8 +25,14 @@ public class Waves : MonoBehaviour
         {
             _spawnPoints.Add(Spawnpoint);
         }
+        
 
-        WaveCalling();
+    }
+
+    private void Update()
+    {
+        if (_enemies.Count == 0)
+            WaveCalling();
     }
 
     void WaveCalling()
