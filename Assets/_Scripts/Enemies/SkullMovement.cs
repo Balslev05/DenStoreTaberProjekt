@@ -12,16 +12,21 @@ public class SkullMovement : MonoBehaviour
     {
         _skull = GetComponent<NavMeshAgent>();
         
-    }
-
-    private void Update()
-    {
+        target = GameObject.FindGameObjectWithTag("Player");
         StartCoroutine(MoveSkull());
+        
     }
+    
 
     IEnumerator MoveSkull()
     {
-        _skull.destination = target.transform.position;
         yield return new WaitForSeconds(0.5f);
+        SkullTarget();
+    }
+
+    void SkullTarget()
+    {
+        _skull.destination = target.transform.position;
+        StartCoroutine(MoveSkull());
     }
 }

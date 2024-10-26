@@ -3219,7 +3219,7 @@ GameObject:
   - component: {fileID: 2109210009}
   m_Layer: 0
   m_Name: WaveController
-  m_TagString: Untagged
+  m_TagString: WaveSystem
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3240,6 +3240,7 @@ MonoBehaviour:
   spawns: 030000000400000005000000060000000700000008000000090000000a0000000b000000
   enemy1Unlock: 1
   _spawnPoints: []
+  _enemies: []
   enemy1: {fileID: 2694489057073175779, guid: adf3035dbb10f6840876c7074903fcd2, type: 3}
 --- !u!4 &2109210010
 Transform:
