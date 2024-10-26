@@ -12,6 +12,8 @@ public class Waves : MonoBehaviour
     
     [SerializeField] private List<GameObject> _spawnPoints = new List<GameObject>();
 
+    public GameObject enemy1;
+
     void Start()
     {
         GameObject[] tempSpawnPoints;
@@ -21,14 +23,14 @@ public class Waves : MonoBehaviour
             _spawnPoints.Add(Spawnpoint);
         }
 
-        
+        WaveCalling();
     }
 
     void WaveCalling()
     {
         for (int i = 0; i < spawns[wave]; i++)
         {
-            
+            _spawnPoints[Random.Range(0, _spawnPoints.Count)].GetComponent<EnemySpawn>().SpawnEnemy(enemy1);
         }
     }
 }

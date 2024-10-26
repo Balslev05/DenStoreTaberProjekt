@@ -1,24 +1,16 @@
 using UnityEngine;
-
 public class Hat_Item : ItemBehavior
 {
+    [Header("Stat change")]
+    public int HPBoost;
 
     public void Start()
     {
-        FindPlayerStats();
+       FindObjectNeeded();
     }
-    public override void InstatiateOnModel(Vector3 pos)
-    {
-
-    }
-
     public override void ChangeStats(PlayerStats playerStats)
     {
-
-    }
-
-    public override void WriteDescreption()
-    {
-
+        playerStats.maxHealth += HPBoost;
+        playerStats.currentHealth += HPBoost;
     }
 }
