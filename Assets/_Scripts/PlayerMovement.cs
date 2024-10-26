@@ -1,9 +1,10 @@
 using UnityEngine;
 
-public class PlayerMovement : MonoBehaviour
+public class PlayerController : MonoBehaviour
 {
     [SerializeField] private Rigidbody rb;
     [SerializeField] private float speed = 5;
+    [SerializeField] private float turnSpeed = 360;
     private Vector3 input;
 
     private void Update()
@@ -17,24 +18,27 @@ public class PlayerMovement : MonoBehaviour
         Move();
     }
 
-    void GatherInput()
+    private void GatherInput()
     {
-        input = new Vector3(Input.GetAxisRaw("Horizontal"),0,Input.GetAxisRaw("Vertical"));
+        input = new Vector3(Input.GetAxisRaw("Horizontal"), 0, Input.GetAxisRaw("Vertical"));
     }
 
-    void Look()
+    private void Look()
     {
-        if (input != Vector3.zero)
-        {
-            var relative = (transform.position + input) - transform.position;
-            var rotation = Quaternion.LookRotation(relative,Vector3.up);
+        if (input == Vector3.zero) return;
 
-            transform.rotation = rotation;
-        }
+        var rotation = Quaternion.LookRotation(input.ToIso(), Vector3.up);
+        transform.rotation = Quaternion.RotateTowards(transform.rotation, rotation, turnSpeed * Time.deltaTime);
     }
 
-    void Move()
+    private void Move()
     {
-        rb.MovePosition(transform.position + (transform.forward * input.magnitude) * speed * Time.deltaTime);
+        rb.MovePosition(transform.position + transform.forward * input.normalized.magnitude * speed * Time.deltaTime);
     }
+}
+
+public static class Helpers
+{
+    private static Matrix4x4 _isoMatrix = Matrix4x4.Rotate(Quaternion.Euler(0, 45, 0));
+    public static Vector3 ToIso(this Vector3 input) => _isoMatrix.MultiplyPoint3x4(input);
 }
