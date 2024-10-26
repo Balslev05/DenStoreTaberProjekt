@@ -5,11 +5,7 @@ TagManager:
   serializedVersion: 3
   tags:
   - SpawnPoint
-<<<<<<< Updated upstream
   - ItemManager
-=======
-  - Enemy
->>>>>>> Stashed changes
   layers:
   - Default
   - TransparentFX

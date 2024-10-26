@@ -12,7 +12,7 @@ public class EnemySpawn : MonoBehaviour
         z = Random.Range(-3, 4);
 
         Waves wavesystem = GameObject.FindGameObjectWithTag("WaveSystem").GetComponent<Waves>();
-        GameObject Enemy = Instantiate(enemy, transform.position + new Vector3(x, 0, z), Quaternion.identity);
-        wavesystem._enemies.Add(Enemy);
+        enemy = Instantiate(enemy, transform.position + new Vector3(x, 0, z), Quaternion.identity);
+        wavesystem._enemies.Add(enemy);
     }
 }

@@ -5,8 +5,8 @@ using Random = UnityEngine.Random;
 
 public class Waves : MonoBehaviour
 {
-    public int wave = 0;
-    [SerializeField] private int[] spawns = new int[] {3,4,5,6,7,8,9,10,11};
+    public int wave = 1;
+    [SerializeField] private int[] spawns = {0,3,4,5,6,7,8,9,10,11};
 
     public int enemy1Unlock = 0;
     /*public int enemy2Unlock = 3;
@@ -25,20 +25,23 @@ public class Waves : MonoBehaviour
         {
             _spawnPoints.Add(Spawnpoint);
         }
-        
-
+        WaveCalling();
     }
 
     private void Update()
     {
         if (_enemies.Count == 0)
+        {
+            wave++;
             WaveCalling();
+        }
     }
 
     void WaveCalling()
     {
         for (int i = 0; i < spawns[wave]; i++)
         {
+            Debug.Log("Wave " + wave + " i " + i + " spawn pr wave " + spawns[wave]);
             _spawnPoints[Random.Range(0, _spawnPoints.Count)].GetComponent<EnemySpawn>().SpawnEnemy(enemy1);
         }
     }
