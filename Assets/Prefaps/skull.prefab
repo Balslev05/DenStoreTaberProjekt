@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 3328000875304470105}
   - component: {fileID: 548757010619136866}
-  - component: {fileID: 2540590636754612776}
   - component: {fileID: -6509390977359625709}
   - component: {fileID: 1918290481857963201}
   - component: {fileID: 355749739644189985}
@@ -58,33 +57,6 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 0.7
   m_Center: {x: 0, y: 0.5, z: 0}
---- !u!54 &2540590636754612776
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2694489057073175779}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!195 &-6509390977359625709
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -119,6 +91,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4cb6059cbcaa0f4084e4f12cb29db41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  agent: {fileID: 0}
   target: {fileID: 4296862778787378414, guid: 5bc33325b7c1e644fbb3c01a06b00622, type: 3}
 --- !u!95 &355749739644189985
 Animator:
