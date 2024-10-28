@@ -99,6 +99,7 @@ GameObject:
   - component: {fileID: 2488680485953099839}
   - component: {fileID: 8261247745913086312}
   - component: {fileID: 9101580108404530868}
+  - component: {fileID: 147074625405372126}
   m_Layer: 0
   m_Name: Item_PotionSpeed
   m_TagString: Untagged
@@ -167,3 +168,17 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0.5, z: 0}
+--- !u!114 &147074625405372126
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8618816788073145574}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c34b3dc3fb6639d4a8e37ce330be9dbc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Roratespeed: 5
+  UpAndDownSpeed: 5

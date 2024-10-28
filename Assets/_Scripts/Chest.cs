@@ -2,6 +2,7 @@ using JetBrains.Annotations;
 using UnityEngine;
 using DG.Tweening;
 using Unity.VisualScripting;
+using System.Collections;
 
 public class Chest : MonoBehaviour
 {
@@ -24,18 +25,19 @@ public class Chest : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            OpenChest();
+            StartCoroutine(OpenChest());
         }
     }
 
     // Update is called once per frame
-    public void OpenChest()
+    public IEnumerator OpenChest()
     {
         TopChest.transform.DOLocalRotate(rotation, 1f).SetEase(Ease.Linear);
-        for (int i = 0; i < 3; i++)
-        {
-            GetRarity();
-        }
+        GetRarity();
+        GameObject item = Instantiate(item_Manager.GetRandomItem(), transform.GetChild(0).transform);
+        item.transform.DOLocalMove(new Vector3(0,2f,0),2f);
+        yield return new WaitForSeconds(2f);
+        item.transform.DOLocalMove(new Vector3(0,0,2),2f);
     }
 
     public void GetRarity()

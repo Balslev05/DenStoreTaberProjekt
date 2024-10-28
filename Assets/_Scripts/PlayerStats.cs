@@ -2,18 +2,8 @@ using System.Collections.Generic;
 using AYellowpaper.SerializedCollections;
 using Microsoft.Unity.VisualStudio.Editor;
 using UnityEngine;
-public class PlayerStats : MonoBehaviour
+public class PlayerStats : HealthSystem
 {
-    [Header("Stats")]
-    public int maxHealth = 100;
-    public int passivelifeRegen = 0;
-    public int currentHealth;
-    public float attackSpeed = 3;
-    public float moveSpeed = 5;
-    public float attackDamage = 10;
-    public float critChance = 10;
-    public float critDamage = 2;
-    public float blockChance = 0;
     [Header("Items")]
     [SerializedDictionary("Items", "Amount")]
     public SerializedDictionary<string, int> items = new SerializedDictionary<string, int>();

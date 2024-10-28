@@ -16,13 +16,14 @@ public abstract class ItemBehavior : MonoBehaviour
     public Sprite TwoDSprite;
     public string ItemName;
     public string ItemDescription;
-/*     public enum type
+    
+    
+    public abstract void ChangeStats(PlayerStats playerStats);
+    public virtual void PickUp()
     {
-        legendary, // color red
-        rare, // color blue
-        common // color grey
-    } */
-
+        Debug.Log("Item picked up" + gameObject.name);
+        InstatiateOnModelAndUI();
+    }
     public void FindObjectNeeded()
     {
         P_Stats = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerStats>();
@@ -62,15 +63,6 @@ public abstract class ItemBehavior : MonoBehaviour
         }
         return false;   
     }
-
-    public abstract void ChangeStats(PlayerStats playerStats);
-    public virtual void PickUp()
-    {
-        Debug.Log("Item picked up" + gameObject.name);
-        InstatiateOnModelAndUI();
-    }
-    
-
     void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Player")
