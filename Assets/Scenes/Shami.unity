@@ -307,7 +307,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1964457717563577885, guid: ca6ffd59ea1c74f45bf53bb7b497ba1f, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -10
+      value: -100
       objectReference: {fileID: 0}
     - target: {fileID: 1964457717563577885, guid: ca6ffd59ea1c74f45bf53bb7b497ba1f, type: 3}
       propertyPath: m_LocalRotation.w
@@ -359,7 +359,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8865184333545941730, guid: ca6ffd59ea1c74f45bf53bb7b497ba1f, type: 3}
       propertyPath: orthographic size
-      value: 5
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
