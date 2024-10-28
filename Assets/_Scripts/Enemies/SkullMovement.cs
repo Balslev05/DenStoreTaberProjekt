@@ -4,20 +4,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class SkullMovement : MonoBehaviour
+public class SkullMovement : EnemyMovement
 {
-    private NavMeshAgent _skull;
-    public GameObject target;
+    
     private void Start()
     {
-        _skull = GetComponent<NavMeshAgent>();
-        
-        target = GameObject.FindGameObjectWithTag("Player");
+        AssignVariables();
         StartCoroutine(MoveSkull());
-        
     }
-    
-
     IEnumerator MoveSkull()
     {
         yield return new WaitForSeconds(0.5f);
@@ -26,7 +20,7 @@ public class SkullMovement : MonoBehaviour
 
     void SkullTarget()
     {
-        _skull.destination = target.transform.position;
+        agent.destination = target.transform.position;
         StartCoroutine(MoveSkull());
     }
 }
