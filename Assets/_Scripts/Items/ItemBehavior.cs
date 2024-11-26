@@ -7,19 +7,16 @@ using UnityEngine.Serialization;
 using UnityEngine.UI;
 public abstract class ItemBehavior : MonoBehaviour
 {
-    [Header("Inheritance Stats (NoNeedToAssign)")]
-    public PlayerStats p_Stats;
-    public GameObject Item_model;
-    [Header("viewOnModel (NeedsToBeAssigned)")]
-    public Vector3 pos;
-    public Vector3 rotation;
-    public Vector3 scale = new Vector3(1, 1, 1);
-   
+    //[Header("Inheritance Stats (NoNeedToAssign)")]
+    [HideInInspector] public PlayerStats p_Stats;
+    private GameObject Item_model;
+    private GameObject i2;
+    
     [Header("InUI(NeedsToBeAssigned)")]
     public Sprite TwoDSprite;
     public string ItemName;
     public string ItemDescription;
-    GameObject i2;
+    
     public abstract void ChangeStats(PlayerStats playerStats);
     public virtual void PickUp()
     {

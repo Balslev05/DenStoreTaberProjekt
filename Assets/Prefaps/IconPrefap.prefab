@@ -67,8 +67,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10911, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: 748957cd6eb503b41bdd97e50a57473b, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -89,6 +89,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0facd3dd25db9045b215521b376aad7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Descreption: 
+  text: {fileID: 0}
 --- !u!1 &3439870124725480182
 GameObject:
   m_ObjectHideFlags: 0
@@ -123,8 +125,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 16.9, y: 14.846}
-  m_SizeDelta: {x: 67.6372, y: 60.3085}
+  m_AnchoredPosition: {x: 23.9, y: 19.346}
+  m_SizeDelta: {x: 81.6372, y: 69.3085}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8647301985583729851
 CanvasRenderer:
@@ -163,8 +165,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4281150948
+  m_fontColor: {r: 0.89411765, g: 0.1764706, b: 0.1764706, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -187,7 +189,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 4
   m_VerticalAlignment: 256
   m_textAlignment: 65535
