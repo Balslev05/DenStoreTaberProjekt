@@ -1,62 +1,72 @@
 using AYellowpaper.SerializedCollections;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEditor.EditorTools;
 using UnityEngine;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 public abstract class ItemBehavior : MonoBehaviour
 {
-    [Header("Inheritance Stats(NoNeedToAssign)")]
-    public PlayerStats P_Stats;
+    [Header("Inheritance Stats (NoNeedToAssign)")]
+    public PlayerStats p_Stats;
     public GameObject Item_model;
-    [Header("viewOnModel(NeedsToBeAssigned)")]
+    [Header("viewOnModel (NeedsToBeAssigned)")]
     public Vector3 pos;
     public Vector3 rotation;
     public Vector3 scale = new Vector3(1, 1, 1);
+   
     [Header("InUI(NeedsToBeAssigned)")]
     public Sprite TwoDSprite;
     public string ItemName;
     public string ItemDescription;
-    
-    
+    GameObject i2;
     public abstract void ChangeStats(PlayerStats playerStats);
     public virtual void PickUp()
     {
-        Debug.Log("Item picked up" + gameObject.name);
         InstatiateOnModelAndUI();
     }
     public void FindObjectNeeded()
     {
-        P_Stats = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerStats>();
+        p_Stats = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerStats>();
         Item_model = transform.GetChild(0).gameObject;
     }
     public void InstatiateOnModelAndUI()
     {
-        // SHOW ON MODEL 
-        GameObject i = Instantiate(Item_model, P_Stats.gameObject.transform);
-        i.transform.localPosition = pos;
-        i.transform.localRotation = Quaternion.Euler(rotation);
-        i.transform.localScale = scale;
-        GameObject i2 = GameObject.Find(ItemName);
+            // SHOW ON MODEL 
+            FindObject(ItemName);
+            //Instantiate(Item_model, p_Stats.gameObject.transform);
+            
         
-        if (!CheckDuplicate(ItemName))
+        if (!CheckDuplicate(ItemName)) // is on UI
         {
-            i2 = Instantiate(P_Stats.IconPrefab,P_Stats.inventoryHolder.gameObject.transform);
+            i2 = Instantiate(p_Stats.IconPrefab, p_Stats.inventoryHolder);
             i2.name = ItemName;
             i2.GetComponent<Image>().sprite = TwoDSprite;
-            P_Stats.items.Add(i2.name,0);
+            p_Stats.items.Add(i2.name,0);
             i2.GetComponent<Icon>().Descreption = ItemDescription;
         }
 
         if (CheckDuplicate(ItemName))
         {   
-            P_Stats.items[ItemName]++;
-            i2.transform.GetChild(0).GetComponent<TMP_Text>().text = P_Stats.items[i2.name].ToString();
-        } 
-            
+            p_Stats.items[ItemName]++;
+            p_Stats.UpdateUI();
+        }
     }
+
+    public void FindObject(string name)
+    {
+        foreach (GameObject item in p_Stats.ItemsOnBody)
+        {
+            if (item.gameObject.name == name)
+            {
+                item.SetActive(true);
+            }
+        }
+    }
+    
     public bool CheckDuplicate(string name)
     {
-        foreach (string ItemList in P_Stats.items.Keys)
+        foreach (string ItemList in p_Stats.items.Keys)
         {
             if (name == ItemList)
                 return true;
@@ -67,8 +77,7 @@ public abstract class ItemBehavior : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
-           
-            ChangeStats(P_Stats);
+            ChangeStats(p_Stats);
             PickUp();
             Destroy(gameObject);
         }

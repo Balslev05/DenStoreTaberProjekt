@@ -47,8 +47,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84d2145a120b0d9468e0ccb3564ab73c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  P_Stats: {fileID: 0}
+  p_Stats: {fileID: 0}
   Item_model: {fileID: 0}
+  whichBodypartIsItOn: 0
   pos: {x: 0.05, y: 0.15, z: -0.45000032}
   rotation: {x: 18, y: 0, z: 0}
   scale: {x: 0.15, y: 0.15, z: 0.15}

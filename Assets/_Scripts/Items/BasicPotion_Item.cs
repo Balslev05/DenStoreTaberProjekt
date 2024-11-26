@@ -14,9 +14,9 @@ public class BasicPotion_Item : ItemBehavior
 
     public override void ChangeStats(PlayerStats playerStats)
     {
-        P_Stats.passivelifeRegen += lifeRegen;
-        P_Stats.moveSpeed += moveSpeed;
-        P_Stats.attackSpeed += attackSpeed;
-        P_Stats.blockChance += blockChange;
+        p_Stats.passivelifeRegen += lifeRegen;
+        p_Stats.moveSpeed += moveSpeed;
+        p_Stats.attackSpeed += attackSpeed;
+        p_Stats.blockChance += blockChange;
     }
 }

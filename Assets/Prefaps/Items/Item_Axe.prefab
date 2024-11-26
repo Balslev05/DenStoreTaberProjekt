@@ -47,14 +47,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db07359be2cabe545a28fe658a93bdd1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  P_Stats: {fileID: 0}
+  p_Stats: {fileID: 0}
   Item_model: {fileID: 0}
+  whichBodypartIsItOn: 2
   pos: {x: 0.4, y: 0.2, z: 0.1}
   rotation: {x: 0, y: -90, z: -90}
   scale: {x: 0.5, y: 0.5, z: 0.5}
-  TwoDSprite: {fileID: 0}
-  ItemName: 
-  ItemDescription: 
+  TwoDSprite: {fileID: 21300000, guid: bf5392234693b7d47a1b1fe49ebe4787, type: 3}
+  ItemName: Axe
+  ItemDescription: Does Axe things
   damageProcentBuff: 25
   ActualValue: 0
 --- !u!65 &3990688482828109398

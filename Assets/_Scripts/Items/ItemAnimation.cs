@@ -5,7 +5,6 @@ public class ItemAnimation : MonoBehaviour
     public float Roratespeed;
     public float UpAndDownSpeed;
     private Transform t;
-    [SerializeField] private GameObject ObjectToANimate;
     void Start()
     {
         t = transform.GetChild(0).GetComponent<Transform>();
