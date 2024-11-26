@@ -7,6 +7,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float speed = 5;
     [SerializeField] private float turnSpeed = 360;
     private Vector3 input;
+    public ParticleSystem DustTrail;
 
     private void Update()
     {
@@ -35,11 +36,17 @@ public class PlayerController : MonoBehaviour
         var rotation = Quaternion.LookRotation(input.ToIso(), Vector3.up);
         transform.rotation = Quaternion.RotateTowards(transform.rotation, rotation, turnSpeed * Time.deltaTime);
         animator.SetBool("IsRunning", true);
+        CreateDustTrail();
     }
 
     private void Move()
     {
         rb.MovePosition(transform.position + transform.forward * input.normalized.magnitude * speed * Time.deltaTime);
+    }
+
+    void CreateDustTrail()
+    {
+        DustTrail.Play();
     }
 }
 
