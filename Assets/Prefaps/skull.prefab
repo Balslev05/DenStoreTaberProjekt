@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: -6509390977359625709}
   - component: {fileID: 1918290481857963201}
   - component: {fileID: 355749739644189985}
+  - component: {fileID: 7158447140117908430}
   m_Layer: 0
   m_Name: skull
   m_TagString: Untagged
@@ -115,6 +116,28 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &7158447140117908430
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2694489057073175779}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92eda62ac08efb44fa9f8a37f06e2556, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 100
+  passivelifeRegen: 0
+  currentHealth: 0
+  attackSpeed: 3
+  moveSpeed: 5
+  attackDamage: 10
+  critChance: 10
+  critDamage: 2
+  blockChance: 0
+  popup: {fileID: 0}
 --- !u!1 &6013450932105642199
 GameObject:
   m_ObjectHideFlags: 0

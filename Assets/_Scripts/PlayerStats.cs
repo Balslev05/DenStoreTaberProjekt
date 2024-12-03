@@ -19,7 +19,7 @@ public class PlayerStats : HealthSystem
     [Header("UI-Animations")] 
     public float timer;
     public KeyCode inventoryKey;
-    private Tween currentTween;
+    public Tween currentTween;
 
     void Start()
     {

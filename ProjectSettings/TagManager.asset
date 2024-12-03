@@ -6,6 +6,8 @@ TagManager:
   tags:
   - SpawnPoint
   - ItemManager
+  - enemy
+  - WorldCanvas
   layers:
   - Default
   - TransparentFX

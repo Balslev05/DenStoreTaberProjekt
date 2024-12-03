@@ -29,11 +29,11 @@ public abstract class ItemBehavior : MonoBehaviour
     }
     public void InstatiateOnModelAndUI()
     {
+        Debug.Log("InstatiateOnModelAndUI");
             // SHOW ON MODEL 
             FindObject(ItemName);
             //Instantiate(Item_model, p_Stats.gameObject.transform);
             
-        
         if (!CheckDuplicate(ItemName)) // is on UI
         {
             i2 = Instantiate(p_Stats.IconPrefab, p_Stats.inventoryHolder);
@@ -52,10 +52,14 @@ public abstract class ItemBehavior : MonoBehaviour
 
     public void FindObject(string name)
     {
+        
+        Debug.Log("Looking for " + name );
         foreach (GameObject item in p_Stats.ItemsOnBody)
         {
+            Debug.Log("Found" + item.name  );
             if (item.gameObject.name == name)
             {
+                Debug.Log("Found" + name);
                 item.SetActive(true);
             }
         }
