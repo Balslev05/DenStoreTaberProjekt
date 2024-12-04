@@ -41,11 +41,14 @@ public class crossbow : MonoBehaviour
 
         foreach (GameObject enemy in Enemies)
         {
-            float distanceToEnemy = Vector3.Distance(currentPosition, enemy.transform.position);
-            if (distanceToEnemy < closestDistance)
+            if (enemy != null)
             {
-                closestDistance = distanceToEnemy;
-                closestEnemy = enemy.transform;
+                float distanceToEnemy = Vector3.Distance(currentPosition, enemy.transform.position);
+                if (distanceToEnemy < closestDistance)
+                {
+                    closestDistance = distanceToEnemy;
+                    closestEnemy = enemy.transform;
+                }
             }
         }
         return closestEnemy;
@@ -59,7 +62,15 @@ public class crossbow : MonoBehaviour
         newArrow.transform.DOLookAt(target.position, 2, AxisConstraint.Y);
         newArrow.AddComponent<Rigidbody>();
         newArrow.GetComponent<Rigidbody>().linearVelocity = (target.position - transform.position).normalized * b_AttackSpeed;
+       
+        float damage = Mathf.CeilToInt(newArrow.GetComponent<Projectile>().damage * b_Damage);
+        
         newArrow.GetComponent<Projectile>().damage = playerStats.calculateDamage(b_Damage);
+        // does this to find the diffrence in damage to see if they have changed
+        if (damage != newArrow.GetComponent<Projectile>().damage)
+        {
+            newArrow.GetComponent<Projectile>().crit = true;
+        }
         yield return new WaitForSeconds(b_Reloade);
         canShoot = true;
         Destroy(newArrow, 1f);
