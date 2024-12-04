@@ -16,6 +16,6 @@ public class Axe_item : ItemBehavior
     }
     public override void ChangeStats(PlayerStats playerStats)
     {
-        playerStats.attackDamage *= ActualValue;
+        playerStats.DamageMultiplayer *= ActualValue;
     }
 }
