@@ -3,7 +3,8 @@ using UnityEngine;
 
 public class Projectile : MonoBehaviour
 {
-    public int damage;
+    public float damage;
+    public bool crit;
 
     private void Start()
     {
@@ -13,7 +14,7 @@ public class Projectile : MonoBehaviour
     {
         if (other.CompareTag("enemy"))
         {
-            other.GetComponent<EnemyStats>().TakeDamage((damage));
+            StartCoroutine(other.GetComponent<EnemyStats>().TakeDamage(damage,crit));
         }
     }
 }
