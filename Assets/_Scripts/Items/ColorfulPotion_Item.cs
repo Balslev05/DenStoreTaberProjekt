@@ -13,8 +13,8 @@ public class ColorfulPotion_Item : ItemBehavior
         p_Stats.maxHealth += 3;
         p_Stats.currentHealth += 1;
         p_Stats.attackSpeed += 0.5f;
-        p_Stats.attackDamage += 2;
-        p_Stats.critDamage += 2;
+        p_Stats.DamageMultiplayer += 2;
+        p_Stats.CritMultiplayer += 2;
         p_Stats.critChance += 5;
         p_Stats.blockChance += 5;
         p_Stats.moveSpeed += 0.5f;

@@ -10,6 +10,6 @@ public class DoubelAxe_Item : ItemBehavior
     public override void ChangeStats(PlayerStats playerStats)
     {
         playerStats.critChance += 10f;
-         playerStats.critDamage *= 2;
+         playerStats.CritMultiplayer *= 2;
     }
 }
