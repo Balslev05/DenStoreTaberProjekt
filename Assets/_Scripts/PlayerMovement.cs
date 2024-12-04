@@ -1,25 +1,33 @@
 using System.Collections;
+using System.Collections.Generic;
+using Unity.VisualScripting;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
-public class PlayerController : MonoBehaviour
+public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] private Animator animator;
     [SerializeField] private Rigidbody rb;
-    [SerializeField] private float speed = 5f;
+    [SerializeField] private float moveSpeed = 5f;
     [SerializeField] private float turnSpeed = 360f;
-    private Vector3 input;
+    private Vector3 playerInput;
 
-    [SerializeField] float dashSpeed = 10f;
-    [SerializeField] float dashDuration = 1f;
-    [SerializeField] float dashCooldown = 1f;
+    [SerializeField] private float dashSpeed = 10f;
+    [SerializeField] private float dashDuration = 1f;
+    [SerializeField] private float dashCooldown = 1f;
+    [SerializeField] private float maxVelocity = 10f;
+    public int MaxDashes = 2;
+    private int Dashes;
     bool isDashing;
     bool canDash;
+    bool isMoveing;
 
     public ParticleSystem DustTrail;
 
     private void Start()
     {
         canDash = true;
+        Dashes = MaxDashes;
     }
 
     private void Update()
@@ -29,54 +37,68 @@ public class PlayerController : MonoBehaviour
         GatherInput();
         Look();
 
-        if (Input.GetKeyDown(KeyCode.Space) && canDash)
+
+        if (Input.GetKeyDown(KeyCode.Space) && canDash && isMoveing)
         {
             StartCoroutine(Dash());
         }
+
     }
 
     private void FixedUpdate()
     {
-        if (isDashing) return;
-
         Move();
+
+        if (rb.linearVelocity.magnitude > maxVelocity)
+            rb.linearVelocity = Vector3.ClampMagnitude(rb.linearVelocity, maxVelocity);
     }
 
     private void GatherInput()
     {
-        input = new Vector3(Input.GetAxisRaw("Horizontal"), 0, Input.GetAxisRaw("Vertical"));
+        playerInput = new Vector3(Input.GetAxisRaw("Horizontal"), 0, Input.GetAxisRaw("Vertical"));
     }
 
     private void Look()
     {
-        if (input == Vector3.zero)
+        if (playerInput == Vector3.zero)
         {
             animator.SetBool("IsRunning", false);
+            isMoveing = false;
             return;
         }
 
-        var rotation = Quaternion.LookRotation(input.ToIso(), Vector3.up);
+        var rotation = Quaternion.LookRotation(playerInput.ToIso(), Vector3.up);
         transform.rotation = Quaternion.RotateTowards(transform.rotation, rotation, turnSpeed * Time.deltaTime);
-        //animator.SetBool("IsRunning", true);
+        isMoveing = true;
+        animator.SetBool("IsRunning", true);
         CreateDustTrail();
     }
 
     private void Move()
     {
-        rb.MovePosition(transform.position + transform.forward * input.normalized.magnitude * speed * Time.deltaTime);
-        animator.SetBool("IsRunning", true);
+        if (isDashing) return;
+        rb.MovePosition(transform.position + transform.forward * playerInput.normalized.magnitude * moveSpeed * Time.deltaTime);
     }
 
     private IEnumerator Dash()
     {
+        Debug.Log ("Dashing");
         canDash = false;
         isDashing = true;
-        rb.MovePosition(transform.position + transform.forward * input.normalized.magnitude * dashSpeed * Time.deltaTime);
+        Dashes--;
+        rb.linearVelocity = new Vector3(playerInput.ToIso().x * dashSpeed, 0, playerInput.ToIso().z * dashSpeed);
         yield return new WaitForSeconds(dashDuration);
         isDashing = false;
+        rb.linearVelocity = Vector3.zero;
 
-        yield return new WaitForSeconds(dashCooldown);
-        canDash = true;
+        if (Dashes > 0)
+            canDash = true;
+        else
+        {
+            yield return new WaitForSeconds(dashCooldown);
+            Dashes = MaxDashes;
+            canDash = true;
+        }
     }
 
     void CreateDustTrail()
