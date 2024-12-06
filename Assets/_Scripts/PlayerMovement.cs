@@ -16,7 +16,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float dashDuration = 1f;
     [SerializeField] private float dashCooldown = 1f;
     [SerializeField] private float maxVelocity = 10f;
-    public int MaxDashes = 2;
+    public int MaxDashes = 1;
     private int Dashes;
     bool isDashing;
     bool canDash;
@@ -32,10 +32,10 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
-        if (isDashing) return;
-
-        GatherInput();
         Look();
+
+        if (isDashing) return;
+        GatherInput();
 
 
         if (Input.GetKeyDown(KeyCode.Space) && canDash && isMoveing)
@@ -49,6 +49,7 @@ public class PlayerMovement : MonoBehaviour
     {
         Move();
 
+        // Limit speed
         if (rb.linearVelocity.magnitude > maxVelocity)
             rb.linearVelocity = Vector3.ClampMagnitude(rb.linearVelocity, maxVelocity);
     }
@@ -83,12 +84,14 @@ public class PlayerMovement : MonoBehaviour
     private IEnumerator Dash()
     {
         Debug.Log ("Dashing");
+        Dashes--;
         canDash = false;
         isDashing = true;
-        Dashes--;
+        animator.SetBool("IsDashing", true);
         rb.linearVelocity = new Vector3(playerInput.ToIso().x * dashSpeed, 0, playerInput.ToIso().z * dashSpeed);
         yield return new WaitForSeconds(dashDuration);
         isDashing = false;
+        animator.SetBool("IsDashing", false);
         rb.linearVelocity = Vector3.zero;
 
         if (Dashes > 0)
