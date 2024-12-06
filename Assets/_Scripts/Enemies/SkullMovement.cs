@@ -11,6 +11,7 @@ public class SkullMovement : EnemyMovement
     {
         AssignVariables();
         StartCoroutine(MoveSkull());
+        damage = 2;
     }
     IEnumerator MoveSkull()
     {
@@ -22,5 +23,18 @@ public class SkullMovement : EnemyMovement
     {
         agent.destination = target.transform.position;
         StartCoroutine(MoveSkull());
+    }
+
+    private void OnCollisionEnter(Collision other)
+    {
+        if (other.gameObject.CompareTag("Player"))
+        {
+            StartCoroutine(target.GetComponent<HealthSystem>().TakeDamage(damage, false));
+        }
+    }
+
+    private void OnColisionExit(Collision other)
+    {
+        
     }
 }
