@@ -11,7 +11,7 @@ public class SkullMovement : EnemyMovement
     {
         AssignVariables();
         StartCoroutine(MoveSkull());
-        damage = 2;
+        damage = 5;
     }
     IEnumerator MoveSkull()
     {
@@ -25,16 +25,19 @@ public class SkullMovement : EnemyMovement
         StartCoroutine(MoveSkull());
     }
 
-    private void OnCollisionEnter(Collision other)
+    private void OnCollisionStay(Collision other)
     {
-        if (other.gameObject.CompareTag("Player"))
+        if (other.gameObject.CompareTag("Player") && attackAvailable)
         {
             StartCoroutine(target.GetComponent<HealthSystem>().TakeDamage(damage, false));
+            attackAvailable = false;
+            StartCoroutine(AttackCooldown());
         }
     }
 
-    private void OnColisionExit(Collision other)
+    IEnumerator AttackCooldown()
     {
-        
+        yield return new WaitForSeconds(0.2f);
+        attackAvailable = true;
     }
 }

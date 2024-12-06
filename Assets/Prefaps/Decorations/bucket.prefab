@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3952998379423221990}
   - component: {fileID: 3342762771964519255}
   - component: {fileID: 3528982818788903509}
+  - component: {fileID: 3387368610414251582}
   m_Layer: 0
   m_Name: bucket
   m_TagString: Untagged
@@ -104,3 +105,26 @@ NavMeshObstacle:
   m_CarveOnlyStationary: 1
   m_Center: {x: 0, y: -0.034, z: 0}
   m_TimeToStationary: 0.5
+--- !u!136 &3387368610414251582
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3037320951211888888}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.44111377
+  m_Height: 0.73266786
+  m_Direction: 1
+  m_Center: {x: 0.000000044703484, y: -0.033666253, z: -0.000000044703484}

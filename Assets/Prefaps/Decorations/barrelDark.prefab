@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 5139416862610229644}
   - component: {fileID: 7493585158142359958}
   - component: {fileID: 2547028668880283889}
+  - component: {fileID: 8896299155817177874}
   m_Layer: 0
   m_Name: barrelDark
   m_TagString: Untagged
@@ -105,3 +106,26 @@ NavMeshObstacle:
   m_CarveOnlyStationary: 1
   m_Center: {x: 0, y: 0.1, z: 0}
   m_TimeToStationary: 0.5
+--- !u!136 &8896299155817177874
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 340432692083869011}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.48418248
+  m_Height: 1.0000002
+  m_Direction: 1
+  m_Center: {x: -0.000000029802322, y: 0.099999905, z: -0.000000014901161}

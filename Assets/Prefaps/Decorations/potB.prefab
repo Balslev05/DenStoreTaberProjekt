@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6991578626882357261}
   - component: {fileID: 7635257249759441526}
   - component: {fileID: 7441288663504104589}
+  - component: {fileID: 9152058629642635692}
   m_Layer: 0
   m_Name: potB
   m_TagString: Untagged
@@ -103,3 +104,26 @@ NavMeshObstacle:
   m_CarveOnlyStationary: 1
   m_Center: {x: 0, y: 0.476, z: 0}
   m_TimeToStationary: 0.5
+--- !u!136 &9152058629642635692
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5264857433790394984}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.42030615
+  m_Height: 0.95170546
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.47585273, z: 0.00000010430813}

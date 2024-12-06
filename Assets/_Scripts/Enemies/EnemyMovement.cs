@@ -8,6 +8,7 @@ public class EnemyMovement : MonoBehaviour
     public GameObject target;
     
     public float damage = 2;
+    public bool attackAvailable = true;
     
 
     public void AssignVariables()
