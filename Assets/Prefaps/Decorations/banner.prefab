@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 409756498643220541}
   - component: {fileID: 65824495700326387}
   - component: {fileID: 5445313258275791441}
+  - component: {fileID: 7398000258258818199}
   m_Layer: 0
   m_Name: banner
   m_TagString: Untagged
@@ -89,6 +90,22 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!208 &7398000258258818199
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1903082417199354467}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.69900006, y: 1.307, z: 0.08400001}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: -1.223, z: 0.08400001}
+  m_TimeToStationary: 0.5
 --- !u!1 &6281039648165882460
 GameObject:
   m_ObjectHideFlags: 0

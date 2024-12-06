@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 2593421913076601060}
   - component: {fileID: 9032567202348052986}
   - component: {fileID: 6882734953168600029}
+  - component: {fileID: 395865624650218933}
   m_Layer: 0
   m_Name: bricks
   m_TagString: Untagged
@@ -86,3 +87,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!208 &395865624650218933
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7141295179173942454}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.68200004, y: 0.39800003, z: 0.638}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0.082, y: 0.39800003, z: -0.042000003}
+  m_TimeToStationary: 0.5

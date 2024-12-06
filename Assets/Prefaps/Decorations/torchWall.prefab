@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 3297961501117863607}
   - component: {fileID: 4543874859176006346}
   - component: {fileID: 3277292625678441905}
+  - component: {fileID: 6429655794747963085}
   m_Layer: 0
   m_Name: torchWall
   m_TagString: Untagged
@@ -89,3 +90,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!208 &6429655794747963085
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6831291572336428450}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.32200003, y: 0.485, z: 0.56600004}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0.21700001, z: 0.39100003}
+  m_TimeToStationary: 0.5
