@@ -16,6 +16,7 @@ public abstract class HealthSystem : MonoBehaviour
     public float critChance = 10;
     public float CritMultiplayer = 2;
     public float blockChance = 0;
+    public bool readyToGetHit = true;
     [Header("UIPrefabs")]
     public GameObject popup;
     public virtual IEnumerator TakeDamage(float baseDamage,bool isCritical)
@@ -42,6 +43,17 @@ public abstract class HealthSystem : MonoBehaviour
         t.transform.DOScale(new Vector3(0,0,0),0.5f);
         Destroy(t,0.5f);
     }
+    
+    public virtual IEnumerator TakeDamagePlayer(float baseDamage)
+    {
+        if (readyToGetHit)
+        {
+            currentHealth -= baseDamage;
+            yield return new WaitForSeconds(0.5f);
+        }
+    }
+    
+    
 
     public float calculateDamage(float baseDamage)
     {

@@ -8,6 +8,7 @@ using UnityEngine.Serialization;
 
 public class PlayerStats : HealthSystem
 {
+    public int gold;
     [Header("Items")]
     [SerializedDictionary("Items", "Amount")]
     public SerializedDictionary<string, int> items = new SerializedDictionary<string, int>();

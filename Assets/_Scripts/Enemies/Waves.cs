@@ -41,8 +41,8 @@ public class Waves : MonoBehaviour
     {
         for (int i = 0; i < spawns[wave]; i++)
         {
-            Debug.Log("Wave " + wave + " i " + i + " spawn pr wave " + spawns[wave]);
             _spawnPoints[Random.Range(0, _spawnPoints.Count)].GetComponent<EnemySpawn>().SpawnEnemy(enemy1);
         }
+        gameObject.GetComponent<ChestSpawning>().SpawnChest();
     }
 }

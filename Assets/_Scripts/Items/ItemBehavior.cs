@@ -16,6 +16,7 @@ public abstract class ItemBehavior : MonoBehaviour
     public Sprite TwoDSprite;
     public string ItemName;
     public string ItemDescription;
+    public bool CanBePickedUp = true;
     
     public abstract void ChangeStats(PlayerStats playerStats);
     public virtual void PickUp()
@@ -76,7 +77,7 @@ public abstract class ItemBehavior : MonoBehaviour
     }
     void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "Player")
+        if (other.gameObject.tag == "Player" && CanBePickedUp)
         {
             ChangeStats(p_Stats);
             PickUp();
