@@ -7,6 +7,7 @@ using System.Collections;
 public class Chest : MonoBehaviour
 {
     public int BasePrise;
+    public int InteractionRange = 3;
     [Header("Rarity Change")]
     public int CommenChange;
     public int RareChange;
@@ -14,27 +15,43 @@ public class Chest : MonoBehaviour
     [Header("Animation")]
     public GameObject TopChest;
     public Vector3 rotation = new Vector3(-90,0,0);
-    
-    ItemManager item_Manager;
+    [Header("Text")]
+    public TextMesh chestText;
+    [SerializeField] private bool IsOpen = false;
+    private ItemManager item_Manager;
+    private GameObject player;
     void Start()
     {
         item_Manager = GameObject.FindGameObjectWithTag("ItemManager").GetComponent<ItemManager>();
-       
+        chestText.text = $"Cost {BasePrise}";
+        player = GameObject.FindGameObjectWithTag("Player");
     }
     public void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
+        if (IsInDistance() && Input.GetKeyDown(KeyCode.Space) && !IsOpen && player.GetComponent<PlayerStats>().gold >= BasePrise) 
             StartCoroutine(OpenChest());
+    }
+
+    public bool IsInDistance()
+    {
+        Vector3 chestScale = chestText.transform.localScale;
+        if (Vector3.Distance(player.transform.position, transform.position) < InteractionRange)
+        {
+            chestText.transform.DOScale(new Vector3(0.1f,0.1f,0.1f),0.5f).SetEase(Ease.OutQuint);
+            return true;
         }
+        chestText.transform.DOScale(new Vector3(0,0,0),0.5f).SetEase(Ease.OutQuint);
+        return false;
     }
 
     // Update is called once per frame
     public IEnumerator OpenChest()
     {
+        IsOpen = true;
         TopChest.transform.DOLocalRotate(rotation, 1f).SetEase(Ease.Linear);
         GetRarity();
         GameObject item = Instantiate(item_Manager.GetRandomItem(), transform.GetChild(0).transform);
+        player.GetComponent<PlayerStats>().gold -= BasePrise;
         item.transform.DOLocalMove(new Vector3(0,2f,0),2f);
         yield return new WaitForSeconds(2f);
         item.transform.DOLocalMove(new Vector3(0,0,2),2f);
