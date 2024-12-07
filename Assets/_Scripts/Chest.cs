@@ -20,12 +20,30 @@ public class Chest : MonoBehaviour
     [SerializeField] private bool IsOpen = false;
     private ItemManager item_Manager;
     private GameObject player;
+    [Header("Mimic")] 
+    [SerializeField] private GameObject mimic;
+    public bool IsMimic;
     void Start()
     {
+        if (mimic != null)
+        {
+            IsMimic = ChooseIfMimic();
+        }
         item_Manager = GameObject.FindGameObjectWithTag("ItemManager").GetComponent<ItemManager>();
         chestText.text = $"Cost {BasePrise}";
         player = GameObject.FindGameObjectWithTag("Player");
     }
+
+    public bool ChooseIfMimic()
+    {
+        int Change = Random.Range(1, 5);
+        if (Change == 1)
+        {
+            return true;
+        }
+        return false;
+    }
+    
     public void Update()
     {
         if (IsInDistance() && Input.GetKeyDown(KeyCode.Space) && !IsOpen && player.GetComponent<PlayerStats>().gold >= BasePrise) 
@@ -47,14 +65,23 @@ public class Chest : MonoBehaviour
     // Update is called once per frame
     public IEnumerator OpenChest()
     {
+        if (IsMimic)
+        {
+            Instantiate(mimic, transform.position, Quaternion.identity);
+            Destroy(this.gameObject);
+        }
+        Destroy(chestText.gameObject);
         IsOpen = true;
         TopChest.transform.DOLocalRotate(rotation, 1f).SetEase(Ease.Linear);
         GetRarity();
         GameObject item = Instantiate(item_Manager.GetRandomItem(), transform.GetChild(0).transform);
+        item.GetComponent<ItemBehavior>().CanBePickedUp = false;
         player.GetComponent<PlayerStats>().gold -= BasePrise;
         item.transform.DOLocalMove(new Vector3(0,2f,0),2f);
         yield return new WaitForSeconds(2f);
         item.transform.DOLocalMove(new Vector3(0,0,2),2f);
+        yield return new WaitForSeconds(1f);
+        item.GetComponent<ItemBehavior>().CanBePickedUp = true;
     }
 
     public void GetRarity()
