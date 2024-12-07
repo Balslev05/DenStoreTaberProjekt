@@ -1,0 +1,81 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &5877580621286535484
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7521054935780635417}
+  - component: {fileID: 8957221773325006362}
+  - component: {fileID: 4349351224743226508}
+  - component: {fileID: 4210834701596409326}
+  m_Layer: 0
+  m_Name: WaveController
+  m_TagString: WaveSystem
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7521054935780635417
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5877580621286535484}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.4776442, y: 6.4937153, z: 11.610395}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8957221773325006362
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5877580621286535484}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8797ebd81f5d5e64ab1b9d69239e5e38, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  wave: 1
+  spawns: 00000000030000000400000005000000060000000700000008000000090000000a0000000b000000
+  enemy1Unlock: 1
+  _spawnPoints: []
+  _enemies: []
+  enemy1: {fileID: 2694489057073175779, guid: adf3035dbb10f6840876c7074903fcd2, type: 3}
+--- !u!114 &4349351224743226508
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5877580621286535484}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3f1e46eb8fb9fc408c468a87746aa41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &4210834701596409326
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5877580621286535484}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb75f70b48ceaec42903d5b6981a1da2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _spawnPoints: []
+  commonChest: {fileID: 1118578388540490415, guid: a0967e6d8aa79464d8d4ae13fda0e798, type: 3}
+  rareChest: {fileID: 3971741233370202652, guid: ab8f499f10597564db6537bdffb120d8, type: 3}
