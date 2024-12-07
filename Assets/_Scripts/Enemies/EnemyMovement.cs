@@ -7,6 +7,9 @@ public class EnemyMovement : MonoBehaviour
     public NavMeshAgent agent;
     public GameObject target;
     
+    public float damage = 2;
+    public bool attackAvailable = true;
+    
 
     public void AssignVariables()
     {
