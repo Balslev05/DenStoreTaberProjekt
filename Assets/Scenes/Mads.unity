@@ -203,6 +203,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   agent: {fileID: 93238851}
   target: {fileID: 4296862778184197357}
+  damage: 2
+  attackAvailable: 1
 --- !u!195 &93238851
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -587,6 +589,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   agent: {fileID: 523091800}
   target: {fileID: 4296862778184197357}
+  damage: 2
+  attackAvailable: 1
 --- !u!195 &523091800
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -1024,6 +1028,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   agent: {fileID: 778184510}
   target: {fileID: 4296862778184197357}
+  damage: 2
+  attackAvailable: 1
 --- !u!195 &778184510
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -1185,7 +1191,7 @@ MonoBehaviour:
   m_OverrideTileSize: 0
   m_TileSize: 256
   m_OverrideVoxelSize: 0
-  m_VoxelSize: 0.23333333
+  m_VoxelSize: 0.33333334
   m_MinRegionArea: 2
   m_NavMeshData: {fileID: 23800000, guid: 732732287fcc62946967e603112d4d2c, type: 2}
   m_BuildHeightMesh: 0
@@ -1283,6 +1289,10 @@ PrefabInstance:
     - target: {fileID: 1804661477305059414, guid: 298dba295c5b75c41abd1a60918dace8, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4808788039677979752, guid: 298dba295c5b75c41abd1a60918dace8, type: 3}
+      propertyPath: CanBePickedUp
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7930219880104647959, guid: 298dba295c5b75c41abd1a60918dace8, type: 3}
       propertyPath: m_Name
@@ -1656,6 +1666,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   agent: {fileID: 2139596339}
   target: {fileID: 4296862778184197357}
+  damage: 2
+  attackAvailable: 1
 --- !u!195 &2139596339
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -1902,6 +1914,7 @@ MonoBehaviour:
   TwoDSprite: {fileID: 0}
   ItemName: 
   ItemDescription: 
+  CanBePickedUp: 0
   playerStats: {fileID: 7902806769536451286}
   arrow: {fileID: 6907036924419427186, guid: f7fd32e17d327d946b74511bb74cbd4f, type: 3}
   Enemies: []
@@ -2242,6 +2255,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   agent: {fileID: 2713981058728003453}
   target: {fileID: 4296862778184197357}
+  damage: 2
+  attackAvailable: 1
 --- !u!4 &1964457716613769814
 Transform:
   m_ObjectHideFlags: 0
@@ -3751,11 +3766,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 1071835261745548466}
   rb: {fileID: 1291890369709619998}
-  speed: 5
+  moveSpeed: 5
   turnSpeed: 360
   dashSpeed: 10
   dashDuration: 1
   dashCooldown: 1
+  maxVelocity: 10
+  MaxDashes: 1
   DustTrail: {fileID: 2904712184893305552, guid: d9dc142670c658346a4e289feca5b21b, type: 3}
 --- !u!114 &7902806769536451286
 MonoBehaviour:
@@ -3780,6 +3797,7 @@ MonoBehaviour:
   blockChance: 0
   readyToGetHit: 1
   popup: {fileID: 1986263507334560125, guid: 54ee4a2543872e34e876f6522e1f3c95, type: 3}
+  gold: 0
   items:
     _serializedList: []
   ItemsOnBody:

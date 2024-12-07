@@ -29,7 +29,7 @@ public class SkullMovement : EnemyMovement
     {
         if (other.gameObject.CompareTag("Player") && attackAvailable)
         {
-            StartCoroutine(target.GetComponent<HealthSystem>().TakeDamage(damage, false));
+            StartCoroutine(target.GetComponent<HealthSystem>().TakeDamagePlayer(damage));
             attackAvailable = false;
             StartCoroutine(AttackCooldown());
         }

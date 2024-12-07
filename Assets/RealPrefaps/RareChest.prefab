@@ -166,11 +166,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   BasePrise: 0
+  InteractionRange: 3
   CommenChange: 0
   RareChange: 0
   LegendaryChange: 0
   TopChest: {fileID: 1646169113243784689}
   rotation: {x: -90, y: 0, z: 0}
+  chestText: {fileID: 0}
+  IsOpen: 0
+  mimic: {fileID: 5343458092236107045, guid: 132079496a3e29d47871b37c10276210, type: 3}
+  IsMimic: 0
 --- !u!1 &4412836788401319150
 GameObject:
   m_ObjectHideFlags: 0
