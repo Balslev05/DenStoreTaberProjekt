@@ -11,8 +11,8 @@ public class ChestSpawning : MonoBehaviour
     public GameObject commonChest;
     public GameObject rareChest;
 
-    private int _numberOfCommonChests = 3;
-    private int _numberOfRareChests = 1;
+    private int _numberOfCommonChests = 5;
+    private int _numberOfRareChests = 3;
     
     Random random = new Random();
 

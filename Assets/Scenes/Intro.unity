@@ -6219,7 +6219,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7434526450740676946}
-  - component: {fileID: 8294274087815714182}
   - component: {fileID: 2409058970102531041}
   - component: {fileID: 5346883643694664923}
   - component: {fileID: 9182864750531355747}
@@ -6643,27 +6642,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 5866565183670127536}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8294274087815714182
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1898483801811842447}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dee9ee7ea37f2414daad2abba5334662, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  animator: {fileID: 9182864750531355747}
-  rb: {fileID: 2409058970102531041}
-  turnSpeed: 360
-  dashSpeed: 18
-  dashDuration: 0.3
-  dashCooldown: 2
-  maxVelocity: 18
-  MaxDashes: 1
-  DustTrail: {fileID: 1770689558534503001}
 --- !u!4 &9142714725877686052
 Transform:
   m_ObjectHideFlags: 0
