@@ -30,7 +30,7 @@ public class Chest : MonoBehaviour
             IsMimic = ChooseIfMimic();
         }
         item_Manager = GameObject.FindGameObjectWithTag("ItemManager").GetComponent<ItemManager>();
-        chestText.text = $"Cost {BasePrise}";
+        chestText.text = $"Cost {BasePrise} E to Open";
         player = GameObject.FindGameObjectWithTag("Player");
     }
 
@@ -46,7 +46,7 @@ public class Chest : MonoBehaviour
     
     public void Update()
     {
-        if (IsInDistance() && Input.GetKeyDown(KeyCode.Space) && !IsOpen && player.GetComponent<PlayerStats>().gold >= BasePrise) 
+        if (IsInDistance() && Input.GetKeyDown(KeyCode.E) && !IsOpen && player.GetComponent<PlayerStats>().gold >= BasePrise) 
             StartCoroutine(OpenChest());
     }
 
@@ -80,12 +80,12 @@ public class Chest : MonoBehaviour
         item.transform.DOLocalMove(new Vector3(0,2f,0),2f);
         yield return new WaitForSeconds(2f);
         item.transform.DOLocalMove(new Vector3(0,0,2),2f);
-        item.transform.SetParent(null);
         yield return new WaitForSeconds(1f);
         item.GetComponent<ItemBehavior>().CanBePickedUp = true;
         yield return new WaitForSeconds(1f);
+        item.transform.SetParent(null);
         transform.DOScale(new Vector3(0, 0, 0),1);
-        Destroy(this,1);
+        Destroy(this.transform,1);
     }
 
     public string GetRarity()

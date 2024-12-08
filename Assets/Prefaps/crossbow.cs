@@ -29,11 +29,6 @@ public class crossbow : ItemBehavior
                 StartCoroutine(ShootAtEnemy(closestEnemy));
             }
         }
-
-        if (playerStats.currentHealth <= 0)
-        {
-            
-        }
     }
 
     public Transform FindClosesEnemy()
@@ -78,7 +73,7 @@ public class crossbow : ItemBehavior
         {
             newArrow.GetComponent<Projectile>().crit = true;
         }
-        yield return new WaitForSeconds(b_Reloade);
+        yield return new WaitForSeconds(playerStats.attackSpeed);
         canShoot = true;
         Destroy(newArrow, 1f);
     }

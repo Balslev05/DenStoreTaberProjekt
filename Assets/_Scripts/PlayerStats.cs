@@ -18,6 +18,7 @@ public class PlayerStats : HealthSystem
     public Transform inventoryHolder;
     public GameObject healthSlider;
     public TMP_Text GoldText;
+    public TMP_Text HealthText;
     [Header("UI-Animations")] 
     public float timer;
     public KeyCode inventoryKey;
@@ -46,6 +47,7 @@ public class PlayerStats : HealthSystem
         healthSlider.GetComponent<Slider>().maxValue = maxHealth;
         healthSlider.GetComponent<Slider>().value = currentHealth;
         GoldText.text = gold.ToString();
+        HealthText.text = currentHealth.ToString() + "/" + maxHealth.ToString();;
         if (Input.GetKeyDown(inventoryKey))
         {
             currentTween.Kill();

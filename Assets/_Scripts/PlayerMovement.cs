@@ -12,7 +12,6 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float dashDuration = 1f;
     [SerializeField] private float dashCooldown = 1f;
     [SerializeField] private float maxVelocity = 10f;
-    public int MaxDashes = 1;
     private int Dashes;
     bool isDashing;
     bool canDash;
@@ -23,12 +22,11 @@ public class PlayerMovement : MonoBehaviour
     private void Start()
     {
         canDash = true;
-        Dashes = MaxDashes;
+        Dashes = GetComponent<PlayerStats>().dashes;
     }
 
     private void Update()
     {
-        MaxDashes = GetComponent<PlayerStats>().dashes;
         Look();
 
         if (isDashing) return;
@@ -96,7 +94,7 @@ public class PlayerMovement : MonoBehaviour
         else
         {
             yield return new WaitForSeconds(dashCooldown);
-            Dashes = MaxDashes;
+            Dashes = GetComponent<PlayerStats>().dashes;
             canDash = true;
         }
     }

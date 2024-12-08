@@ -21,7 +21,7 @@ public class BasicPotion_Item : ItemBehavior
             return;
         }
         p_Stats.moveSpeed += moveSpeed;
-        p_Stats.attackSpeed += attackSpeed;
+        p_Stats.attackSpeed = p_Stats.attackSpeed* 0.75f;
         p_Stats.critChance += critchange;
     }
 }

@@ -42,6 +42,7 @@ public class Waves : MonoBehaviour
             else
             {
                 WaveCalling();
+                gameObject.GetComponent<ChestSpawning>().SpawnChest();
             }
         }
     }
@@ -52,6 +53,5 @@ public class Waves : MonoBehaviour
         {
             _spawnPoints[Random.Range(0, _spawnPoints.Count)].GetComponent<EnemySpawn>().SpawnEnemy(enemy1);
         }
-        gameObject.GetComponent<ChestSpawning>().SpawnChest();
     }
 }
