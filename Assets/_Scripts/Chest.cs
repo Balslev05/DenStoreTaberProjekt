@@ -80,6 +80,7 @@ public class Chest : MonoBehaviour
         item.transform.DOLocalMove(new Vector3(0,2f,0),2f);
         yield return new WaitForSeconds(2f);
         item.transform.DOLocalMove(new Vector3(0,0,2),2f);
+        item.transform.SetParent(null);
         yield return new WaitForSeconds(1f);
         item.GetComponent<ItemBehavior>().CanBePickedUp = true;
         yield return new WaitForSeconds(1f);
