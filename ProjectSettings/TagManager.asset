@@ -8,6 +8,8 @@ TagManager:
   - ItemManager
   - enemy
   - WorldCanvas
+  - WaveSystem
+  - ChestSpawn
   layers:
   - Default
   - TransparentFX

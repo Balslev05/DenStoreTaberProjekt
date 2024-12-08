@@ -16,11 +16,11 @@ public class crossbow : ItemBehavior
     
     void Start()
     {
-        Enemies.AddRange(GameObject.FindGameObjectsWithTag("enemy"));
     }
     
     void Update()
     {
+        Enemies.AddRange(GameObject.FindGameObjectsWithTag("enemy"));
         if (canShoot)
         {
             Transform closestEnemy = FindClosesEnemy();

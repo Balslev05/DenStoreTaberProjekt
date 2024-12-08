@@ -57,11 +57,11 @@ public abstract class ItemBehavior : MonoBehaviour
         Debug.Log("Looking for " + name );
         foreach (GameObject item in p_Stats.ItemsOnBody)
         {
-            Debug.Log("Found" + item.name  );
+            Debug.Log("Found" + item.name);
             if (item.gameObject.name == name)
             {
-                Debug.Log("Found" + name);
                 item.SetActive(true);
+                Debug.Log("SetActive" + name);
             }
         }
     }
@@ -79,6 +79,7 @@ public abstract class ItemBehavior : MonoBehaviour
     {
         if (other.gameObject.tag == "Player" && CanBePickedUp)
         {
+            Debug.Log("PickedUp");
             ChangeStats(p_Stats);
             PickUp();
             Destroy(gameObject);

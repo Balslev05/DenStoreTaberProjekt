@@ -654,7 +654,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 560970f787fec414e8a61dbdba03a56e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioSource: {fileID: 0}
+  audioSource: {fileID: 1342518313}
   fadeDuration: 1
 --- !u!82 &1342518313
 AudioSource:
@@ -666,10 +666,10 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 29b646c6f0c8c1c4b9f0e95687f3abe9, type: 3}
+  m_Resource: {fileID: 8300000, guid: 29b646c6f0c8c1c4b9f0e95687f3abe9, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.1
   m_Pitch: 1
   Loop: 0
   Mute: 0

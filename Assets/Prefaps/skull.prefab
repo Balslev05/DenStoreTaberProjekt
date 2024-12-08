@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 7158447140117908430}
   m_Layer: 0
   m_Name: skull
-  m_TagString: Untagged
+  m_TagString: enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -56,7 +56,7 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 0.7
+  m_Radius: 0.55
   m_Center: {x: 0, y: 0.5, z: 0}
 --- !u!195 &-6509390977359625709
 NavMeshAgent:
@@ -94,6 +94,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   agent: {fileID: 0}
   target: {fileID: 4296862778787378414, guid: 5bc33325b7c1e644fbb3c01a06b00622, type: 3}
+  damage: 2
+  attackAvailable: 1
 --- !u!95 &355749739644189985
 Animator:
   serializedVersion: 7
@@ -128,16 +130,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 92eda62ac08efb44fa9f8a37f06e2556, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 100
+  maxHealth: 10
   passivelifeRegen: 0
   currentHealth: 0
   attackSpeed: 3
   moveSpeed: 5
-  attackDamage: 10
+  DamageMultiplayer: 1
   critChance: 10
-  critDamage: 2
+  CritMultiplayer: 2
   blockChance: 0
-  popup: {fileID: 0}
+  readyToGetHit: 1
+  popup: {fileID: 5705394180732986047, guid: 54ee4a2543872e34e876f6522e1f3c95, type: 3}
+  coinsPrefab: {fileID: 7075520999410460972, guid: 0972a7c33f11e3e4088c8adbed2c2c82, type: 3}
+  lootforce: 3
+  minCoins: 3
+  maxCoins: 7
 --- !u!1 &6013450932105642199
 GameObject:
   m_ObjectHideFlags: 0

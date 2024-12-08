@@ -30,6 +30,7 @@ public class Waves : MonoBehaviour
 
     private void Update()
     {
+        _enemies = new List<GameObject>(GameObject.FindGameObjectsWithTag("enemy"));
         if (_enemies.Count == 0)
         {
             wave++;

@@ -19,6 +19,7 @@ public class Icon : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     }
     public void OnPointerEnter(PointerEventData pointerEventData)
     {
+        Debug.Log("LOoking at the text");
         text.text = Descreption;
     }
     

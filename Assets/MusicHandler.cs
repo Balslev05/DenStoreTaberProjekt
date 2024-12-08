@@ -32,7 +32,7 @@ public class MusicHandler : MonoBehaviour
         audioSource.Play();
 
         float startVolume = 0;
-        float targetVolume = 1;
+        float targetVolume = 0.1f;
         float elapsed = 0;
 
         while (elapsed < duration)

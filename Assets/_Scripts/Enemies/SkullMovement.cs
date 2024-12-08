@@ -9,6 +9,7 @@ public class SkullMovement : EnemyMovement
     
     private void Start()
     {
+        this.gameObject.tag = "enemy";
         AssignVariables();
         StartCoroutine(MoveSkull());
         damage = 5;
