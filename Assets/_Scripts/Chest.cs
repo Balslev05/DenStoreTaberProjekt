@@ -82,6 +82,9 @@ public class Chest : MonoBehaviour
         item.transform.DOLocalMove(new Vector3(0,0,2),2f);
         yield return new WaitForSeconds(1f);
         item.GetComponent<ItemBehavior>().CanBePickedUp = true;
+        yield return new WaitForSeconds(1f);
+        transform.DOScale(new Vector3(0, 0, 0),1);
+        Destroy(this,1);
     }
 
     public string GetRarity()

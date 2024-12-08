@@ -1,9 +1,5 @@
-using AYellowpaper.SerializedCollections;
-using TMPro;
-using Unity.VisualScripting;
-using UnityEditor.EditorTools;
+
 using UnityEngine;
-using UnityEngine.Serialization;
 using UnityEngine.UI;
 public abstract class ItemBehavior : MonoBehaviour
 {

@@ -37,27 +37,31 @@ public class crossbow : ItemBehavior
     }
 
     public Transform FindClosesEnemy()
-    {
-        Transform closestEnemy = null;
-        float closestDistance = Mathf.Infinity;
-        Vector3 currentPosition = transform.position;
-        if (Enemies.Count == 0)
-        {return null; }
+{
+    Transform closestEnemy = null;
+    float closestDistance = Mathf.Infinity;
+    Vector3 currentPosition = transform.position;
+    float attackRange = 10.0f; // Specify the attack range
 
-        foreach (GameObject enemy in Enemies)
+    if (Enemies.Count == 0)
+    {
+        return null;
+    }
+
+    foreach (GameObject enemy in Enemies)
+    {
+        if (enemy != null)
         {
-            if (enemy != null)
+            float distanceToEnemy = Vector3.Distance(currentPosition, enemy.transform.position);
+            if (distanceToEnemy < closestDistance && distanceToEnemy <= attackRange)
             {
-                float distanceToEnemy = Vector3.Distance(currentPosition, enemy.transform.position);
-                if (distanceToEnemy < closestDistance)
-                {
-                    closestDistance = distanceToEnemy;
-                    closestEnemy = enemy.transform;
-                }
+                closestDistance = distanceToEnemy;
+                closestEnemy = enemy.transform;
             }
         }
-        return closestEnemy;
     }
+    return closestEnemy;
+}
 
     private IEnumerator ShootAtEnemy(Transform target)
     {

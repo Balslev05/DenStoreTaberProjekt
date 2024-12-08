@@ -1,11 +1,8 @@
 using System.Collections.Generic;
 using AYellowpaper.SerializedCollections;
 using DG.Tweening;
-using Microsoft.Unity.VisualStudio.Editor;
 using TMPro;
 using UnityEngine;
-using UnityEngine.Serialization;
-using UnityEngine.UIElements;
 using Slider = UnityEngine.UI.Slider;
 
 public class PlayerStats : HealthSystem
