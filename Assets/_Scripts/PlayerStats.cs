@@ -5,6 +5,8 @@ using Microsoft.Unity.VisualStudio.Editor;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Serialization;
+using UnityEngine.UIElements;
+using Slider = UnityEngine.UI.Slider;
 
 public class PlayerStats : HealthSystem
 {
@@ -17,6 +19,8 @@ public class PlayerStats : HealthSystem
     public GameObject IconPrefab;
     public GameObject inventory_UI;
     public Transform inventoryHolder;
+    public GameObject healthSlider;
+    public TMP_Text GoldText;
     [Header("UI-Animations")] 
     public float timer;
     public KeyCode inventoryKey;
@@ -38,6 +42,9 @@ public class PlayerStats : HealthSystem
 
     void Update()
     {
+        healthSlider.GetComponent<Slider>().maxValue = maxHealth;
+        healthSlider.GetComponent<Slider>().value = currentHealth;
+        GoldText.text = gold.ToString();
         if (Input.GetKeyDown(inventoryKey))
         {
             currentTween.Kill();
