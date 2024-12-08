@@ -14,5 +14,7 @@ public class EnemySpawn : MonoBehaviour
         Waves wavesystem = GameObject.FindGameObjectWithTag("WaveSystem").GetComponent<Waves>();
         enemy = Instantiate(enemy, transform.position + new Vector3(x, 0, z), Quaternion.identity);
         wavesystem._enemies.Add(enemy);
+        enemy.GetComponent<EnemyStats>().currentHealth = enemy.GetComponent<EnemyStats>().currentHealth += 2*wavesystem.wave;
+        enemy.GetComponent<EnemyMovement>().damage++;
     }
 }

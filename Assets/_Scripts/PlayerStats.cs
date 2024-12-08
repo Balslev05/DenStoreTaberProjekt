@@ -42,6 +42,10 @@ public class PlayerStats : HealthSystem
 
     void Update()
     {
+        if (currentHealth <= 0)
+        {
+            UnityEngine.SceneManagement.SceneManager.LoadScene(UnityEngine.SceneManagement.SceneManager.GetActiveScene().buildIndex + 1);
+        }
         healthSlider.GetComponent<Slider>().maxValue = maxHealth;
         healthSlider.GetComponent<Slider>().value = currentHealth;
         GoldText.text = gold.ToString();

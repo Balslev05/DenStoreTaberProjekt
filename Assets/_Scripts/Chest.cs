@@ -74,7 +74,7 @@ public class Chest : MonoBehaviour
         IsOpen = true;
         TopChest.transform.DOLocalRotate(rotation, 1f).SetEase(Ease.Linear);
         GetRarity();
-        GameObject item = Instantiate(item_Manager.GetRandomItem(), transform.GetChild(0).transform);
+        GameObject item = Instantiate(item_Manager.GetRandomItem(GetRarity()), transform.GetChild(0).transform);
         item.GetComponent<ItemBehavior>().CanBePickedUp = false;
         player.GetComponent<PlayerStats>().gold -= BasePrise;
         item.transform.DOLocalMove(new Vector3(0,2f,0),2f);
@@ -84,7 +84,7 @@ public class Chest : MonoBehaviour
         item.GetComponent<ItemBehavior>().CanBePickedUp = true;
     }
 
-    public void GetRarity()
+    public string GetRarity()
     {
         int procentage = Random.Range(1, 101);
         string Rarity = WhatRarity(procentage);
@@ -93,17 +93,22 @@ public class Chest : MonoBehaviour
         {
             case "Commen":
                 Debug.Log("You got a commen item" + procentage);
+                return "Commen";
                 break;
             case "Rare":
                 Debug.Log("You got a rare item" + procentage);
+                return "Rare";
                 break;
             case "Legendary":
                 Debug.Log("You got a legendary item" + procentage);
+                return "Legendary";
                 break;
             case "Null":
                 Debug.Log("There was a error" + procentage);
                 break;
         }
+
+        return null;
     }
     public string WhatRarity(int Procentage)
     {

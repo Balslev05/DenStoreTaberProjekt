@@ -2887,9 +2887,10 @@ GameObject:
   - component: {fileID: 6451127922306440954}
   - component: {fileID: 7541268339568586361}
   - component: {fileID: 2991473289660847246}
+  - component: {fileID: 7347436109324569251}
   m_Layer: 0
   m_Name: Mimic
-  m_TagString: Untagged
+  m_TagString: enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2920,7 +2921,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: -1923039037
   m_Radius: 2
-  m_Speed: 5
+  m_Speed: 8
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -2967,6 +2968,35 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   agent: {fileID: 0}
   target: {fileID: 0}
+  damage: 10
+  attackAvailable: 1
+--- !u!114 &7347436109324569251
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5343458092236107045}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92eda62ac08efb44fa9f8a37f06e2556, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 30
+  passivelifeRegen: 0
+  currentHealth: 0
+  attackSpeed: 3
+  moveSpeed: 5
+  DamageMultiplayer: 1
+  critChance: 10
+  CritMultiplayer: 2
+  blockChance: 0
+  readyToGetHit: 1
+  popup: {fileID: 5705394180732986047, guid: 54ee4a2543872e34e876f6522e1f3c95, type: 3}
+  coinsPrefab: {fileID: 7075520999410460972, guid: 0972a7c33f11e3e4088c8adbed2c2c82, type: 3}
+  lootforce: 5
+  minCoins: 7
+  maxCoins: 20
 --- !u!1 &5698682442307383877
 GameObject:
   m_ObjectHideFlags: 0

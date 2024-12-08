@@ -137,14 +137,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   p_Stats: {fileID: 0}
-  Item_model: {fileID: 4404714473480222127}
-  whichBodypartIsItOn: 1
-  pos: {x: 0, y: 2.3, z: 0.2}
-  rotation: {x: 0, y: 90, z: 135}
-  scale: {x: 1, y: 1, z: 1}
   TwoDSprite: {fileID: 21300000, guid: c5cb9814dc82f2a4580c6865d034e1d4, type: 3}
-  ItemName: TwoSidedAxe
-  ItemDescription: Does Crazy Shit
+  ItemName: GreatAxe
+  ItemDescription: CRIT GO UP
+  CanBePickedUp: 0
 --- !u!65 &6202581494045313770
 BoxCollider:
   m_ObjectHideFlags: 0

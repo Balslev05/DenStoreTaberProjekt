@@ -8,15 +8,14 @@ using TMPro;
 public abstract class HealthSystem : MonoBehaviour
 {
     [Header("Stats")] public int maxHealth = 100;
-    public int passivelifeRegen = 0;
     public float currentHealth;
     public float attackSpeed = 3;
     public float moveSpeed = 5;
     public float DamageMultiplayer = 1;
     public float critChance = 10;
     public float CritMultiplayer = 2;
-    public float blockChance = 0;
     public bool readyToGetHit = true;
+    public int dashes;
     [Header("UIPrefabs")]
     public GameObject popup;
     public virtual IEnumerator TakeDamage(float baseDamage,bool isCritical)
@@ -38,6 +37,7 @@ public abstract class HealthSystem : MonoBehaviour
         t.text = baseDamage.ToString();
         t.transform.DOPunchScale(new Vector3(1.5f, 1.5f, 1.5f), 0.5f,2,1);
         t.transform.DOPunchPosition(new Vector3(2,2,2),2,1, 0.5f);
+        Destroy(t,4);
        // t.transform.DOLocalMoveY(2, 0.5f);
         yield return new WaitForSeconds(1f);
         t.transform.DOScale(new Vector3(0,0,0),0.5f);

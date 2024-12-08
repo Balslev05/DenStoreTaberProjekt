@@ -6,7 +6,8 @@ public class BasicPotion_Item : ItemBehavior
     public int lifeRegen;
     public float moveSpeed;
     public float attackSpeed;
-    public int blockChange;
+    public int critchange;
+    public bool IsDash = false;
     void Start()
     {
         FindObjectNeeded();   
@@ -14,9 +15,13 @@ public class BasicPotion_Item : ItemBehavior
 
     public override void ChangeStats(PlayerStats playerStats)
     {
-        p_Stats.passivelifeRegen += lifeRegen;
+        if (IsDash)
+        {
+            p_Stats.dashes++;
+            return;
+        }
         p_Stats.moveSpeed += moveSpeed;
         p_Stats.attackSpeed += attackSpeed;
-        p_Stats.blockChance += blockChange;
+        p_Stats.critChance += critchange;
     }
 }

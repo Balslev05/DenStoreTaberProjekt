@@ -34,7 +34,15 @@ public class Waves : MonoBehaviour
         if (_enemies.Count == 0)
         {
             wave++;
-            WaveCalling();
+            if (wave >= spawns.Length)
+            {
+                UnityEngine.SceneManagement.SceneManager.LoadScene(
+                    UnityEngine.SceneManagement.SceneManager.GetActiveScene().buildIndex + 2);
+            }
+            else
+            {
+                WaveCalling();
+            }
         }
     }
 

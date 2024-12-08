@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using DG.Tweening;
 using UnityEngine;
 using Random = System.Random;
 
@@ -28,17 +29,21 @@ public class ChestSpawning : MonoBehaviour
 
     public void SpawnChest()
     {
+        
         for (int i = 0; i < _numberOfCommonChests; i++)
         {
             int rnd = PreventChestCollisions();
             _spawnedPoints.Add(_spawnPoints[rnd]);
-            Instantiate(commonChest, _spawnPoints[rnd].transform.position, Quaternion.identity);
+           GameObject chest = Instantiate(commonChest, _spawnPoints[rnd].transform.position, Quaternion.identity);
+           chest.transform.DORotate(new Vector3(0, -90, 0),0);
         }
         for (int i = 0; i < _numberOfRareChests; i++)
         {
             int rnd = PreventChestCollisions();
             _spawnedPoints.Add(_spawnPoints[rnd]);
-            Instantiate(rareChest, _spawnPoints[rnd].transform.position, Quaternion.identity);
+            GameObject chest = Instantiate(rareChest, _spawnPoints[rnd].transform.position, Quaternion.identity);
+            chest.transform.DORotate(new Vector3(0, -90, 0),0);
+
         }
     }
 

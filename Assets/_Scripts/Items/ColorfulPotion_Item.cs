@@ -16,8 +16,7 @@ public class ColorfulPotion_Item : ItemBehavior
         p_Stats.DamageMultiplayer += 2;
         p_Stats.CritMultiplayer += 2;
         p_Stats.critChance += 5;
-        p_Stats.blockChance += 5;
         p_Stats.moveSpeed += 0.5f;
-        p_Stats.passivelifeRegen += 1;
+        p_Stats.dashes ++;
     }
 }

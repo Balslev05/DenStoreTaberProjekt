@@ -29,6 +29,11 @@ public class crossbow : ItemBehavior
                 StartCoroutine(ShootAtEnemy(closestEnemy));
             }
         }
+
+        if (playerStats.currentHealth <= 0)
+        {
+            
+        }
     }
 
     public Transform FindClosesEnemy()

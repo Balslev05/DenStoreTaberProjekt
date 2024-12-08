@@ -8,7 +8,6 @@ public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] private Animator animator;
     [SerializeField] private Rigidbody rb;
-    [SerializeField] private float moveSpeed = 5f;
     [SerializeField] private float turnSpeed = 360f;
     private Vector3 playerInput;
 
@@ -32,6 +31,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
+        MaxDashes = GetComponent<PlayerStats>().dashes;
         Look();
 
         if (isDashing) return;
@@ -78,7 +78,7 @@ public class PlayerMovement : MonoBehaviour
     private void Move()
     {
         if (isDashing) return;
-        rb.MovePosition(transform.position + transform.forward * playerInput.normalized.magnitude * moveSpeed * Time.deltaTime);
+        rb.MovePosition(transform.position + transform.forward * playerInput.normalized.magnitude * GetComponent<PlayerStats>().moveSpeed * Time.deltaTime);
     }
 
     private IEnumerator Dash()

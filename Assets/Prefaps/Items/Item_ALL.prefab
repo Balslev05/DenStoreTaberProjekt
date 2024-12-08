@@ -48,14 +48,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   p_Stats: {fileID: 0}
-  Item_model: {fileID: 0}
-  whichBodypartIsItOn: 0
-  pos: {x: 0.05, y: 0.15, z: -0.45000032}
-  rotation: {x: 18, y: 0, z: 0}
-  scale: {x: 0.15, y: 0.15, z: 0.15}
   TwoDSprite: {fileID: 21300000, guid: 55b0e4ad83ecb954db30ba9c359d5800, type: 3}
-  ItemName: ColorfulPotion
-  ItemDescription: A good  Color Potion
+  ItemName: AntiLoser
+  ItemDescription: YOU ARE THE CHOSEN ONE
+  CanBePickedUp: 0
 --- !u!65 &7334092278657269384
 BoxCollider:
   m_ObjectHideFlags: 0

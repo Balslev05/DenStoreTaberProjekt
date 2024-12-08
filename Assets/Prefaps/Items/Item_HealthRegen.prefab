@@ -135,18 +135,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 259d1bc6e28af0a44b351a9265afe48a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  P_Stats: {fileID: 0}
-  Item_model: {fileID: 0}
-  pos: {x: 0.18, y: 0.15000002, z: -0.39}
-  rotation: {x: 0, y: 73, z: 16}
-  scale: {x: 0.15, y: 0.15, z: 0.15}
+  p_Stats: {fileID: 0}
   TwoDSprite: {fileID: 21300000, guid: bf737ad9583060a419f3f82521e18b2e, type: 3}
-  ItemName: HealthRegenPotion
-  ItemDescription: Potion gives you Passivelife regen
+  ItemName: Dash
+  ItemDescription: Increase max dashes
+  CanBePickedUp: 0
   lifeRegen: 3
   moveSpeed: 0
   attackSpeed: 0
   blockChange: 0
+  IsDash: 0
 --- !u!65 &2717639717294530257
 BoxCollider:
   m_ObjectHideFlags: 0

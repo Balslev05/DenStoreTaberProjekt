@@ -47,18 +47,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 259d1bc6e28af0a44b351a9265afe48a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  P_Stats: {fileID: 0}
-  Item_model: {fileID: 0}
-  pos: {x: -0.22, y: 0.15, z: -0.38}
-  rotation: {x: 18.000004, y: 70, z: 4}
-  scale: {x: 0.15, y: 0.15, z: 0.15}
+  p_Stats: {fileID: 0}
   TwoDSprite: {fileID: 21300000, guid: 748957cd6eb503b41bdd97e50a57473b, type: 3}
-  ItemName: AttackSpeedPotion
-  ItemDescription: This gives you extra attackspeed
+  ItemName: AttackSpeed_P
+  ItemDescription: This makes you shoot faster
+  CanBePickedUp: 0
   lifeRegen: 0
   moveSpeed: 0
   attackSpeed: 3
-  blockChange: 0
+  critchange: 0
+  IsDash: 0
 --- !u!65 &3019753010283765036
 BoxCollider:
   m_ObjectHideFlags: 0
