@@ -32,6 +32,10 @@ public class ChestSpawning : MonoBehaviour
         
         for (int i = 0; i < _numberOfCommonChests; i++)
         {
+            if (_spawnedPoints.Count == _spawnPoints.Count)
+            {
+                break;
+            }
             int rnd = PreventChestCollisions();
             _spawnedPoints.Add(_spawnPoints[rnd]);
            GameObject chest = Instantiate(commonChest, _spawnPoints[rnd].transform.position, Quaternion.identity);
@@ -39,6 +43,10 @@ public class ChestSpawning : MonoBehaviour
         }
         for (int i = 0; i < _numberOfRareChests; i++)
         {
+            if (_spawnedPoints.Count == _spawnPoints.Count)
+            {
+                break;
+            }
             int rnd = PreventChestCollisions();
             _spawnedPoints.Add(_spawnPoints[rnd]);
             GameObject chest = Instantiate(rareChest, _spawnPoints[rnd].transform.position, Quaternion.identity);
